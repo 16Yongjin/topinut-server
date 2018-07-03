@@ -19,6 +19,7 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
   await fs.writeFile('./cards.json', JSON.stringify(req.body))
+  cards = req.body
   res.send(req.body)
 })
 
