@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const fs = require('mz/fs')
-
+const port = process.env.PORT || 3000
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -22,4 +22,4 @@ app.post('/', async (req, res) => {
   res.send(req.body)
 })
 
-app.listen(3000)
+app.listen(port)
